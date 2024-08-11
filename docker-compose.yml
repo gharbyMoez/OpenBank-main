@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+  account-api:
+    image: account-api:latest
+    build:
+      context: .
+      dockerfile: Account.API/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+
+  atm-api:
+    image: atm-api:latest
+    build:
+      context: .
+      dockerfile: ATM.API/Dockerfile
+    ports:
+      - "8082:8080"
+      - "8083:8081"
+
+  branch-api:
+    image: branch-api:latest
+    build:
+      context: .
+      dockerfile: Branch.API/Dockerfile
+    ports:
+      - "8084:8080"
+      - "8085:8081"
+
+  openbanking-api:
+    image: openbanking-api:latest
+    build:
+      context: .
+      dockerfile: OpenBanking/Dockerfile
+    ports:
+      - "8086:8080"
+      - "8087:8081"
+
+  transaction-api:
+    image: transaction-api:latest
+    build:
+      context: .
+      dockerfile: Transaction.API/Dockerfile
+    ports:
+      - "8088:8080"
+      - "8089:8081"
